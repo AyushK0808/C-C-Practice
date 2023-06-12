@@ -1,22 +1,14 @@
 #include <stdio.h>
 
-void swap(int *a, int *b){
-    int temp=*a;
-    *a=*b;
-    *b=temp;
-}
-
-void selsort(int *arr, int n){
+void insort(int *arr, int n){
     for (int i=1;i<n;i++){
-        int min=i;
-        for (int j=i+1;j<n;j++){
-            if (arr[j]<arr[min]){
-                min=j;
-            }
+        int key=arr[i];
+        int j=i-1;
+        while (j>0 && arr[j]>key){
+            arr[j+1]=arr[j];
+            j=j-1;
         }
-        if (min!=1){
-            swap(&arr[min],&arr[i]);
-        }
+        arr[j+1]=key;
     }
 }
 
@@ -28,7 +20,7 @@ int main(){
     for (int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
-    selsort(arr,n);
+    insort(arr,n);
     for (int i=0;i<n;i++){
         printf("%d ,",arr[i]);
     }

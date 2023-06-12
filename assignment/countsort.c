@@ -10,9 +10,9 @@ int getMax(int a[], int n) {
 }  
   
 void countSort(int a[], int n){  
-   int output[n+1];  
+   int output[100];  
    int max = getMax(a, n);  
-   int count[max+1];   
+   int count[100];   
   for (int i = 0; i <= max; ++i){  
     count[i] = 0;   
    }  

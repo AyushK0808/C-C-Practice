@@ -4,8 +4,8 @@ void merge(int a[],int beg,int mid,int end){
     int n1=mid-beg+1;
     int n2=end-mid;
     
-    int arrL[n1];
-    int arrR[n2];
+    int arrL[100];
+    int arrR[100];
     for (i=0;i<n1;i++){
         arrL[i]=a[beg+i];
     }
@@ -49,7 +49,7 @@ void mergeSort(int a[],int beg,int end){
 int main(){
     int n;
     scanf("%d",&n);
-    int arr[n];
+    int arr[100];
     for (int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
